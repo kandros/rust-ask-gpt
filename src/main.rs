@@ -37,7 +37,7 @@ fn extract_response(response: Response) -> String {
         .expect("Could not parse response");
 
     let response = response.get_text();
-    response.to_string() /* WHHY TRIM? */
+    response.to_string()
 }
 
 fn send_request(api_key: &str, body: GPT3RequestBody) -> Response {
