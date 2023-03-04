@@ -2,10 +2,13 @@
 use std::panic::set_hook;
 
 use dialoguer::{theme::ColorfulTheme, Input};
+
 use model::{GPT3RequestBody, GTP3Response};
 use reqwest::blocking::Response;
+use spinner::Spinner;
 
 mod model;
+mod spinner;
 
 const API_URL: &str = "https://api.openai.com/v1/chat/completions";
 fn main() {
@@ -20,7 +23,11 @@ fn main() {
         .interact_text()
         .unwrap();
 
+    let spinner = Spinner::new();
+    spinner.start();
     let result = ask_open_ai(&api_key, &prompt);
+    spinner.stop();
+
     println!("{result}")
 }
 
