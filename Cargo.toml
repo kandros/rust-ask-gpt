@@ -1,0 +1,16 @@
+[package]
+name = "ask-gpt"
+description = "A simple CLI to ask questions to OpenAI API using gpt-3.5-turbo model."
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dialoguer = "0.10.3"
+reqwest = { version = "0.11.14", features = ["json", "blocking"] }
+serde = { version = "1.0.152", features = ["derive"] }
+
+[[bin]]
+name = "ask"
+path = "src/main.rs"
