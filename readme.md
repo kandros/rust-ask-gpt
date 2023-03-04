@@ -5,3 +5,6 @@
 Experimenting with the OpenAI Chat Completions API and rust textual interfaces.
 
 https://openai.com/blog/introducing-chatgpt-and-whisper-apis
+
+## inspired by 
+https://www.youtube.com/watch?v=SCR9OHBjQVQ
